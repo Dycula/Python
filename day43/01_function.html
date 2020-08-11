@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //匿名函数的使用,自执行(匿名函数的声明)(实参)
+        (function (){
+            var a=100;
+            //构建局部的作用域
+            console.log("匿名函数自执行",a);
+        })()
+
+        //定义变量来接收匿名函数
+        var fn=function(){
+            console.log("fn被调用");
+        };
+        fn();
+        console.log(fn);
+
+        //函数作为参数
+        function show(f){
+            console.log("show:",f);
+        }
+        show(fn);//f=fn
+        show(function(){
+            console.log("直接传递匿名函数");
+        })//f=function()
+    </script>
+</head>
+<body>
+
+</body>
+</html>

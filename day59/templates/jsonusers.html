@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/static/common.js"></script>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("#btnShow").click(function(){
+                var xhr=createXhr();
+                xhr.open("get","/ajax/jsonusers_server/",true);
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==4 && xhr.status==200){
+                        //接收响应数据并转换成json数据
+                        var arr=JSON.parse(xhr.responseText);
+                        var html="";
+                        $(arr).each(function(i,obj){
+                            html+="<tr>";
+                            html+="<td>"+obj.pk+"</td>";
+                            html+="<td>"+obj.fields.uname+"</td>";
+                            html+="<td>"+obj.fields.upwd+"</td>";
+                            html+="<td>"+obj.fields.uemail+"</td>";
+                            html+="<td>"+obj.fields.nickname+"</td>";
+                            html+="</tr>";
+                        });
+                        $("#content").html(html);
+                    }
+                }
+                xhr.send(null);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btnShow">显示</button>
+    <table width="500" border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>邮箱</th>
+            <th>昵称</th>
+        </tr>
+        </thead>
+        <tbody id="content"></tbody>
+    </table>
+</body>
+</html>

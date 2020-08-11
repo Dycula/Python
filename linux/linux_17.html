@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第17页</title>
+    <style>
+        div{
+            border:1px solid black;
+            width:800px;
+        }
+        #d1{
+           position:fixed;
+           top:20px;
+        }
+        #d2{
+           position:fixed;
+           top:20px;
+           left:500px;
+        }
+        p{
+            padding-left:10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="linux_16.html" id="d1">上一页</a>
+        <a href="linux_18.html" id="d2">下一页</a>
+        <h1>17、文件压缩解压:gzip</h1>
+
+        <p>tar与gzip命令结合使用实现文件打包、压缩。 </p>
+        <p>tar只负责打包文件,但不压缩,用gzip压缩tar打包后的文件,其扩展名一般用xxxx.tar.gz。</p>
+        <p>格式:</p>
+        <p>	gzip   [选项]   被压缩文件</p>
+
+
+        <img src="img/17_gzip01.png" alt="">
+        <p>gzip压缩</p>
+        <p>1</p>
+        <img src="img/17_gzip02.png" alt="">
+        <p>2</p>
+        <img src="img/17_gzip03.png" alt="">
+        <p>gzip解压</p>
+        <img src="img/17_gzip04.png" alt="">
+        <p></p>
+        <p>tar这个命令并没有压缩的功能,它只是一个打包的命令,但是在tar命令中增加一个选项 (-
+        z) 可以调用gzip实现了一个压缩的功能,实行一个先打包后压缩的过程。</p>
+        <p>压缩用法:</p>
+        <p>	tar 	-zcvf 	压缩包包名 	文件1 文件2 …</p>
+        <p>解压用法：</p>
+        <p>tar 	-zxvf 	压缩包包名 </p>
+        <p>-z :指定压缩包的格式为:file.tar.gz</p>
+        <p>tar压缩用法 </p>
+        <img src="img/17_gzip05.png" alt="">
+        <p>tar解压用法</p>
+        <img src="img/17_gzip06.png" alt="">
+        <p>解压到指定目录:-C (大写字母“C”)</p>
+        <p>格式：</p>
+        <p>	tar  -zxvf  压缩文件名 	-C   路径</p>
+
+        <img src="img/17_gzip07.png" alt="">
+
+
+
+        <br>
+
+    </div>
+</body>
+</html>

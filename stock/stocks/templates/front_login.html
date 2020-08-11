@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>登录</title>
+        <script src="../static/js/jquery-1.9.1.min.js"></script>
+
+    </head>
+    <body>
+        <div style="width: 60%;margin-left: 20%;padding-top: 20px;margin-bottom: 20px; text-align: center">
+             <div style="margin-top: 20px;">
+                <h1>用户登录</h1>
+            </div>
+            <div style="margin-top: 20px;">
+                <span style="width: 90px; margin-left: 20px; display: inline-block">用户名：</span>
+                <span><input type="text" id="username" name="username"></span>
+            </div>
+            <div style="margin-top: 20px;">
+                <span style="width: 90px; margin-left: 20px; display: inline-block">密码：</span>
+                <span><input type="password" id="password" name="password"></span>
+            </div>
+            <div style="margin-top: 20px;">
+                <span style="width: 90px; margin-left: 20px; display: inline-block"><img src=""></span>
+                <span><input type="text" id="" name=""></span>
+            </div>
+            <div style="margin-top: 20px;">
+                <span id="error" style=" margin-left: 20px; display: inline-block;color:red"></span>
+
+            </div>
+
+
+            <div style="margin-top: 20px;">
+                <span><input type="button" id="login" name="login" value="登录"></span>
+                <span><input type="button" id="" name="" value="取消"></span>
+            </div>
+
+        </div>
+
+
+
+
+        <script>
+            $("#login").on('click',function () {
+                 $.ajax({
+                type:'post',
+                url:'http://localhost:8001/userinfo/mylogin/',
+                data:{
+                    "username":$("#username").val(),
+                    "password":$("#password").val(),
+                },
+                dataType:'json',
+                success:function (response) {
+                    if(response.result == true){
+                        location.href = "http://localhost:8001/index/";
+                    }else{
+                        $("#error").text(response.error);
+                    }
+                },
+                error:function (response) {
+
+                },
+            })
+            })
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

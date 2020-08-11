@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width:500px;
+            height:500px;
+            margin:0 auto;
+            background:orange;
+        }
+        #d1,#d2,#d3{
+            width:200px;
+            height:200px;
+        }
+        #d1{
+            /*height:300px;*/
+            background:red;
+            float:right;  
+        }
+        #d2{
+            background:green;
+            height:300px;
+            float:right;
+        }
+        #d3{
+            background:blue;
+            float:right;
+        }
+        span{
+            float:right;
+            width:200px;
+            height:200px;
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+    </div>
+    <!--脱离文档流的元素在文档中不再占位,可以手动调整宽高-->
+    <span></span>
+
+</body>
+</html>

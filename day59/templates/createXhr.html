@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建</title>
+    <script>
+        function createXhr(){
+            var xhr=null;
+            //根据不同的浏览器创建不同的异步对象
+            if(window.XMLHttpRequest){
+                var xhr=new XMLHttpRequest();
+            }else{
+                var xhr=new ActiveXObject("Microsoft.XMLHTTP");
+           }
+            return xhr;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="createXhr()">创建XHR</button>
+</body>
+</html>

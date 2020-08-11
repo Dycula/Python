@@ -1,0 +1,30 @@
+<form method="post" action="/login">
+        <fieldset>
+            <legend>登录</legend>
+        <table>
+            <tr>
+                <td>
+                    用户名：<input type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    密码：<input type="password" name="password">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    {{result}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="提交">
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="button" value="注册"　
+                           onclick="javascript:location.href='/regist';">
+                </td>
+            </tr>
+        </table>
+        </fieldset>
+</form>

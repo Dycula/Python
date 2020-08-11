@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*内嵌样式,借助style标签书写样式声明,实现样式与结构的分离*/
+        /*使用选择器匹配文档元素,为其应用样式*/
+        /*标签选择器:根据标签名匹配元素应用样式*/
+        h1{
+        background:green;
+        }
+        span{
+        color:orange;
+        }
+        span{
+        color:pink;
+        }
+    </style>
+    <!--引入外部样式表-->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!--行内样式,借助style标签属性设置样式规则-->
+    <!--css样式声明　属性名:属性值;-->
+    <h1 style="font-size:16px;color:red;">你是年少的欢喜</h1>
+    <h1 style="font-size:16px;color:red;">你是年少</h1>
+    <h2>
+        <span>少年</span>
+    </h2>
+    <span>少年</span>
+    <div style="color:purple;">
+        <p style="color:blue">
+            <span style="color:gray">子元素可以继承父元素或祖先元素的文本样式</span>
+        </p>
+    </div>
+</body>
+</html>

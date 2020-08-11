@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #nav{
+            width:900px;
+            height:30px;
+            background:gray;
+        }
+        .left{
+            width:300px;
+            float:left;
+            background:green;
+        }
+        .right{
+            width:300px;
+            float:right;
+            background:red;
+        }
+        ul{
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+        li{
+            float:left;
+            margin-right:30px;
+        }
+        #main{
+            margin-top:50px;
+            width:900px;
+            /*解决子元素全部浮动造成父元素高度为0的问题*/
+            /*height:400px;*/
+            /*overflow:auto;*/
+            background:pink;
+        }
+        .item1{
+            width:580px;
+            height:400px;
+            background:gray;
+            float:left;
+        }
+        .item2,.item3{
+            float:right;
+            width:300px;
+            height:190px;
+            background:gray;
+        }
+        .item2{
+            margin-bottom:20px;
+        }
+        #d1,#d2{
+            width:200px;
+            height:200px;
+            background:red;
+        }
+        #d1{
+            background:green;
+            float:left;
+        }
+        #d2{
+            /*使文档中正常元素不受前面浮动元素的影响
+            clear:left/right/both;
+            */
+            clear:left;
+        }
+        .clear{
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div class="left">
+            <ul>
+                <li>首页</li>
+                <li>物流</li>
+                <li>客服</li>
+            </ul>
+        </div>
+        <div class="right">右侧导航</div>
+    </div>
+    <div id="main">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="clear"></div>
+
+    </div>
+    <div>
+        联系我们
+        <div id="d1"></div>
+        <div id="d2"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #nav,#search{
+            width:650px;
+            margin:0 auto;
+        }
+        #nav{
+            margin-bottom:50px;
+            height:30px;
+            background:gray;
+            font-size:0;
+            }
+           a{
+                display:inline-block;
+                text-decoration:none;
+                color:#fff;
+                width:122px;
+                height:30px;
+                font-size:20px;
+                background:green;
+                /*调边距,行内块元素完全支持盒模型属性*/
+                /*margin:5px 10px;*/
+                margin-right:10px;
+                text-align:center;
+                line-height:30px;
+           }
+           .no-margin{
+                margin:0;
+           }
+           #search{
+            height:200px;
+            background:gray;
+           }
+           input{
+                width:500px;
+                height:50px;
+                /*调整盒模型的计算方式,取值为border-box时,表示
+                当前元素指定的width/height是包含边框在内区域的尺寸*/
+                box-sizing:border-box;
+                border:1px solid red;
+                padding:5px 10px;
+           }
+           button{
+           /*水平方向上元素之间的垂直对齐方式,可取top/middle/bottom*/
+            vertical-align:middle;
+            width:150px;
+            height:50px;
+           }
+    </style>
+</head>
+<body>
+    <!--导航栏-->
+    <div id="nav">
+    <a href="">天猫</a>
+    <a href="">天猫</a>
+    <a href="">天猫</a>
+    <a href="">天猫</a>
+    <a href="" class="no-margin">天猫</a>
+    </div>
+    <!--搜索栏-->
+    <div id="search">
+        <input type="text"><button>百度一下</button>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

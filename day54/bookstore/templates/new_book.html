@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加新书</title>
+</head>
+<body>
+    <form action="/bookstore/add" method="post">
+        <div>
+            <label for="id_new">书名</label>
+            <input type="text" name="title" placeholder="请输入新书名" required id="id_new">
+        </div>
+        <div>
+            <label for="id_pub">出版社</label>
+            <input type="text" name="pub_house"
+                 placeholder="请输入出版社名称" required id="id_pub">
+        </div>
+        <div>
+            <label for="id_price">定价</label>
+            <input type="text" name="price" placeholder="请输入定价" required id="id_price">
+        </div>
+        <div>
+            <label for="id_mk_price">零售价</label>
+            <input type="text" name="market_price"
+                placeholder="请输入零售价" required id="id_mk_price">
+        </div>
+        <div>
+            <input type="submit" value="添加新书">
+        </div>
+    </form>
+</body>
+</html>

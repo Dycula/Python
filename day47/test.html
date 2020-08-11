@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("#checkAll").click(function(){
+                $(".checkItem").prop("checked",$(this).prop("checked"))
+            })
+            /*2.反选:被选中的商品数量等于商品按钮的数量,视为全选
+            未被选中的商品数量为0,视为全选*/
+            //方式一
+            $(".checkItem").click(function(){
+                //判断列表中有几个选中元素
+                //遍历jquery
+                var i=0;
+                $(".checkItem").each(function (elem1,elem2){
+                    var r=$(this).prop("checked");
+                    if(r){
+                        i++;
+                    }
+                })
+                //判断是否全选
+                if(i==$(".checkItem").length){
+                    $("#checkAll").prop("checked",true);
+                }else{
+                    $("#checkAll").prop("checked",false);
+                }
+            })
+            //方式二:未被选中的商品数量
+            $(".checkItem").click(function(){
+                //获取别选中的商品数量
+                //伪类:checked表示按钮选中的状态
+                console.log($(".checkItem:checked").length);
+                //否定筛选　not()
+                var len=$(".checkItem").not(".checkItem:checked").length;
+                console.log(len);
+                if(len==0){
+                    //全选
+                    $("#checkAll").prop("checked",true);
+                }else{
+                    //取消全选
+                    $("#checkAll").prop("checked",false);
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>
+        <input type="checkbox" id="checkAll">全选
+    </p>
+    <p>
+        <input type="checkbox" class="checkItem">商品
+    </p>
+    <p>
+        <input type="checkbox" class="checkItem">商品
+    </p>
+    <p>
+        <input type="checkbox" class="checkItem">商品
+    </p>
+    <p>
+        <input type="checkbox" class="checkItem">商品
+    </p>
+</body>
+</html>

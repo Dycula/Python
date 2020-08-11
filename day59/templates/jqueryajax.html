@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("#btnAjax").click(function(){
+                $.ajax({
+                    url:"/ajax/jsonusers_server/",
+                    type:"get",
+                    dataType:"json",
+                    async:true,
+                    success:function(resText){
+                        $(resText).each(function(i,obj){
+                            console.log("用户名："+obj.fields.uname);
+                            console.log("邮箱："+obj.fields.ueamil);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btnAjax">使用$.ajax()请求数据</button>
+</body>
+</html>

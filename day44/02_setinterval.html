@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">开启</button>
+    <button id="stop1">关闭</button>
+    <h1 style="text-align:center;" id="show"></h1>
+    <script>
+        var timer;
+        //开启定时器
+        start.onclick=function(){
+            //开启定时器
+            timer=setInterval(function(){
+                //打印日期时间data
+                var date=new Date();
+                console.log(date);
+            },1000);
+        };
+        stop1.onclick=function(){
+            //关闭间歇调用
+            clearInterval(timer);
+        };
+
+        /*控制台输出5秒的倒计时*/
+        var i= 5;
+        show.innerHTML=i;
+        var timerId=setInterval(function(){
+            i--;
+            if(i!=0){
+                show.innerHTML=i;
+            }else{
+                show.innerHTML="倒计时结束";
+                //停止定时器
+                clearInterval(timerId);
+            }
+        },1000);
+    </script>
+</body>
+</html>

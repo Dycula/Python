@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        console.log("hello world")
+        document.write("<h1>动态添加<h1>")
+    </script>
+     <!--使用src属性引入外部的js文件-->
+    <script src="index.js">
+        console.log("hello")
+    </script>
+</head>
+<body>
+    <h1 onclick="document.write('hai')">点击</h1>
+    <!--元素绑定事件
+    网页弹框:alert()网页警告框-->
+    <h1 onclick="alert('h1被点击')">点击</h1>
+    <!--通过script标签书写js语句-->
+    <script>
+        //单行注释
+        /*多行注释*/
+        console.log("控制台输出")
+        //带有输入框的弹框
+        //prompt("请输入姓名")
+        document.write("<h1>动态添加<h1>")
+    </script>
+</body>
+</html>

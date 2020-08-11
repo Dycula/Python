@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>From表单注册</title>
+    <style>
+        div>label{
+            display:incline-block;
+            width:80px;
+        }
+        span{
+            color:red;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="/user/login" method="post">
+        <div>
+            <label for="id_name">用户名</label>
+            <br>
+            <input type="text" name="username"
+                   id="id_name" value="{{ username }}">
+            <span>{{ name_error }}</span>
+        </div>
+        <div>
+            <label for="id_password">密码</label>
+            <br>
+            <input type="text" name="password"
+                    id="id_password" value="{{ password }}">
+            <span>{{ password_error }}</span>
+        </div>
+        <div>
+            <label for="id_password2">密码</label>
+            <br>
+            <input type="text" name="password2"
+                    id="id_password2" value="{{ password2 }}">
+            <span>{{ password2_error }}</span>
+        </div>
+        <input type="submit" value="注册">
+    </form>
+</body>
+</html>

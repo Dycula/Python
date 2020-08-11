@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/day15" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projiect/maneger_system" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day16/projiect/package01" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day16/projiect" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day16/my_project" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day16/my_project/common" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day16/my_project/skill_system" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day18" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day18/common" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projiect/game2048" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day21" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day24" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day25" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day35" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day36" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day36/WebFrame" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day36/HttpServer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fb/day51/day51" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/day56" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Ambition/mysql" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blog/tool" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blog" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BOKE/blog" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/boke/blog" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/spider" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/stock" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DJangoHotel_Python-master/DJangoHotel" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DJangoHotel_Python-master/DJangoHotel/viewspackage" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DJangoHotel_Python-master" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Coffee/coffee_server" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.6 (yy_python01)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
+  </component>
+</module>

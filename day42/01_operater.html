@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var a=10;
+        var r1=a+10;
+        a*=5;//a=a*5
+        console.log(a,r1)//50,20
+        //1.自增和自减　++  --
+        var b=3;
+        //单独与变量结合,前缀和后缀没有区别
+        b++;
+        ++b;
+        console.log(b);//5
+        //与其他运算符结合复用
+        var r2=b++;
+        console.log(r2,b);//5,6
+        var r3=++b;
+        console.log(r3,b);//7,7
+        var c= 10 ;
+        var r4=--c;
+        console.log(r4,c);//9,9
+        var r5=c--;
+        console.log(r5,c);//9,8
+        //自增和自减运算结果永远是number值
+        var s="10";
+        s++;
+        console.log(s,typeof s,);//11,number
+
+        //面试题
+        var n=5;
+        r=n++ + ++n + n++ + ++n + n;
+        console.log(r,n);//37,9
+
+        //2.关系运算
+        var res1=10>2;
+        var res2="10">"2";
+        console.log(res1,res2);//true false
+        var res3="少年">"小哥哥";
+        var s1="小";
+        var s2="少";
+        //获取字符的unicode编码charCodeAt(index)
+        console.log(s1.charCodeAt(),s2.charCodeAt(),res3);//23567 23569 true
+
+        var res4="10">2;
+        var res5="10">true;//10>1
+        var res6=true>false;//1>0
+        var res7="10">undefined;//10>NaN--->false
+        var res8="10">null;//10>0
+        var res9="true">false;//NaN>0
+
+        //相等和全等
+        var a1=10=="10";
+        var a2=10==="10";
+        console.log(a1,a2)//true false
+
+        //3.逻辑运算符
+        var year = prompt("请输入年份")
+        var r = year%4==0 && year%100 !=0 ||year%400==0;
+        console.log(year,typeof year,r);
+        //逻辑非:对布尔值取反,除零值以外,所有值都为真
+        var b=!5;//false
+        //逻辑非的运算优先级高于关系运算
+        var c=!5<3;//false<3
+        console.log(c);//true
+
+        //4.三目运算符
+        var a =10;
+        if(a>5){
+            console.log("成立");
+        }else{
+            console.log("不成立");
+        }
+        　/*a>5? consolelog("ok"):console.log("error")*/
+        var result=a>5?"ok":"false";
+        console.log(result);//ok
+        var  res2=a>5?"ok":a>3? "大于3":"小于3";
+        console.log(res2);//ok
+    </script>
+</head>
+<body>
+    <h1 onclick=""></h1>
+</body>
+</html>

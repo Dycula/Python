@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*接收用户输入的身高(m)和体重(kg)计算bmi=体重/(身高*身高)*/
+        var w=prompt("请输入体重(kg)");
+        var h=prompt("请输入身高(m)");
+        var bmi=w/(h**2);
+        var result=bmi.toFixed(1);
+        var a=result>23.9?"偏重":result>=18.5&&result<=23.9?"健康":"偏瘦";
+        console.log(a,bmi)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

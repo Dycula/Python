@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("#btnReg").click(function(){
+                var xhr=createXhr();
+                var params={
+                    uname:$("#uname").val(),
+                    upwd:$("#upwd").val(),
+                    uemail:$("#uemail").val(),
+                    nickname:$("#nickname").val(),
+                };
+                //将params转换成json串
+                var str=JSON.stringify(params);
+                xhr.open("get","/ajax/registerjson_server?params="+str,true);
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==4 && xhr.status==200){
+                        alert(xhr.responseText);
+                    }
+                }
+                xhr.send(null);
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>用户名称:
+        <input type="text" id="uname">
+        <span id="uname-tip"></span>
+    </p>
+    <p>用户密码:
+        <input type="password" id="upwd">
+    </p>
+    <p>电子邮箱:
+        <input type="email" id="uemail">
+    </p>
+    <p>用户昵称:
+        <input type="text" id="nickname">
+    </p>
+    <p>
+        <input type="button" value="注册" id="btnReg">
+        <input type="button" value="注册" id="btnRegPost">
+    </p>
+</body>
+</html>

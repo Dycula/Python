@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #banner {
+            width:400px;
+            height:400px;
+            margin:0 auto;
+        }
+        #banner img{
+            width:400px;
+            height:400px;
+        }
+    </style>
+</head>
+<body>
+    /*实现网页轮播图
+    方式一:控制图片的隐藏和显示
+    方式二:切换图片路径*/
+
+    <div id="banner">
+        <img src="000.jpg" alt="" id="img">
+    </div>
+    <script>
+        //1.保存图片路径
+        var imgArr=["000.jpg","happy.gif"];
+        //2.保存图片索引
+        var index=0;
+        //3.开启间歇调用
+        var timer=setInterval(autoplay,1000);
+        function autoplay(){
+            //更新索引
+            index ++;
+            //判断是否越界
+            if(index==imgArr.length){
+                index=0;
+            }
+            //修改元素的src属性
+            img.src=imgArr[index];
+        }
+    </script>
+</body>
+</html>

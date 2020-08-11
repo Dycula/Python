@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1{
+        width:200px;
+        height:200px;
+        background:blue;}
+        #d2{border:5px solid red;}
+        #d3{border:5px double red;}
+        #d4{border:5px dotted red;}
+        #d5{border:5px dashed red;}
+        div{
+        width:0px;
+        height:0px;
+        /*
+        border-top:20px solid red;
+        border-right:10px solid rgba(0,0,0,0);
+        border-bottom:10px solid transparent;
+        border-left:10px solid transparent;
+        */
+        border:20px solid transparent;
+        border-top:20px solid black;
+        }
+        span{
+            /*
+            display:inline-block;
+            width:0;
+            height:0;
+            */
+            /*行内元素默认不能手动调宽高,空标签默认宽度为0,
+            默认高度与字体大小有关,可以设置字体大小为0实现高度为0的效果*/
+            border-top:10px solid red;
+            border-right:10px solid blue;
+            border-bottom:10px solid gray;
+            border-left:10px solid purple;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span></span>
+    <h1 id="d1"></h1>
+    <h1 id="d2"></h1>
+    <h1 id="d3"></h1>
+    <h1 id="d4"></h1>
+    <h1 id="d5"></h1>
+</body>
+</html>

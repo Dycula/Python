@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/static/common.js"></script>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("#btnShow").click(function(){
+                var xhr=createXhr();
+                xhr.open("get","/ajax/users_server/",true);
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==4 && xhr.status==200){
+                        var msg=xhr.responseText;
+                        var html="";
+                        var users=msg.split("|");
+                        for(var i=0;i<users.length;i++){
+                            html+="<tr>";
+                            //将每个人的信息通过_再次拆分
+                            var info=users[i].split("_");
+                            html+="<td>"+info[0]+"</td>";
+                            html+="<td>"+info[1]+"</td>";
+                            html+="<td>"+info[2]+"</td>";
+                            html+="<td>"+info[3]+"</td>";
+                            html+="<td>"+info[4]+"</td>";
+                            html+="</tr>";
+                        }
+                        $("#content").html(html);
+                    }
+                }
+                xhr.send(null);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btnShow">显示</button>
+    <table width="500" border="1">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>邮箱</th>
+            <th>昵称</th>
+        </tr>
+        </thead>
+        <tbody id="content"></tbody>
+    </table>
+</body>
+</html>

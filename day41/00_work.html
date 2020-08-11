@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*清除浏览器默认样式*/
+        body,ul,ol{
+            margin:0;
+            padding:0;
+            /*取消列表默认样式(项目符号)*/
+            list-style:none;
+        }
+        body{
+            color:#ddd;
+        }
+        a{
+            text-decoration:none;
+            color:#ddd;
+        }
+        /*外围结构的样式*/
+        #nav,#banner{
+            width:990px;
+            margin:0 auto;
+        }
+        /*单独设置每个模块的样式*/
+        /*1.导航栏*/
+        #nav{
+           background: green;
+           height:30px;
+        }
+        /*匹配ul中的直接子元素li*/
+        #nav ul>li{
+            float:left;
+            margin-left:50px;
+            line-height:30px;
+        }
+        #nav ul>li:first-child{
+            position:relative;
+        }
+        #nav ol{
+            display:none;
+            position:absolute;
+            z-index:10;
+        }
+        /*子元素过滤选择器,
+        li:first-child匹配作为第一个子元素存在的li */
+        #nav ul>li:first-child:hover ol{
+            background:red;
+            display:block;
+        }
+        #nav ol li:hover{
+            background:orange;
+        }
+        /*2.轮播图*/
+        #banner{
+            /*margin-top:30px;*/
+            margin:30px auto;
+            height:300px;
+            position:relative;
+        }
+        #banner>img{
+            width:990px;
+            height:300px;
+        }
+        #banner ul{
+            width:140px;
+            position:absolute;
+            bottom:20px;
+            /*参照父元素的宽度计算偏移量*/
+            left:50%;
+            margin-left:-70px;
+            background:green;
+        }
+        #banner li{
+            float:left;
+            width:20px;
+            height:20px;
+            background:red;
+            border-radius:50%;
+            margin-left:10px;
+        }
+        #banner ul>li:first-child{
+            margin:0;
+        }
+        #banner a{
+        /*元素脱流之后,可以手动调整尺寸,默认大小由内容决定*/
+            position:absolute;
+            width:60px;
+            height:30px;
+            background:orange;
+            top:50%;
+            margin-top:-15px;
+        }
+        .prev{
+            left:10px;
+        }
+        .next{
+            right:10px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="nav">
+       <ul>
+            <li>
+                北京
+                <ol>
+                    <li>北京</li>
+                    <li>上海</li>
+                    <li>广州</li>
+                    <li>深圳</li>
+                </ol>
+            </li>
+            <li>订单查询</li>
+            <li>配送范围</li>
+       </ul>
+    </div>
+    <div id="banner">
+        <img src="wxy.jpeg" alt="">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <!--阻止超链接默认的跳转行为
+        href="javascript:void(0)"
+         才能添加自定义点击事件-->
+        <a href="javascript:void(0)" class="prev">上一张</a>
+        <a href="javascript:void(0)" class="next">下一张</a>
+
+    </div>
+</body>
+</html>

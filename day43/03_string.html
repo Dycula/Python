@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //1.创建
+        var s1="少年";
+        var s2=new String("少女");
+        console.log(s1,s2);
+        //2.字符串按照数组结构存储,可以使用数组方法操作字符
+        console.log(s1[1]);
+        //遍历字符串
+        for (var i=0;i<s2.length;i++){
+            console.log(s2[i]);
+        }
+        //3.字符串方法
+        //转换大小写字母
+        var s3="Hello";
+        var r1=s3.toUpperCase();
+        var r2=s3.toLowerCase();
+        console.log(s3,r1,r2);
+        //获取指定下标对应的字符或字符编码
+        var r3=s3.charAt(3);
+        var r4=s3.charCodeAt(3);
+        console.log(r3,r4);
+        //获取指定字符的下标
+        var r5=s3.indexOf("l");
+        var r6=s3.lastIndexOf("l");
+        console.log(r5,r6);
+        //截取字符串substring(start,end)
+        var r7=s3.substring(0,2);
+        console.log(r7);
+        //分割字符串
+        var r8=s3.split("l");
+        console.log(r8);
+        /*1.接收用户输入的邮箱,提取用户名和服务商"zhangsan@163.com"*/
+        var a="zhangsan@163.com";
+        var b=a.split("@");
+        console.log(b[0],b[1]);
+        /*2.从身份证好中提取年月日信息,前六位是省市县*/
+        var a1="121212199202060031";
+        var b1=a1.substring(6,14);
+        console.log(b1);
+        /*3.101_5&201_78301_9
+        商品id为101,数量为5*/
+        var w1="101_5&201_7&301_9";
+        var a2=w1.split("&");
+        for(var i=0; i<a2.length;i++){
+            var a3=a2[i].split("_");
+            console.log(a3[0],a3[1]);
+        }
+        //模式匹配
+        var str="上知乎,搜知乎,问知乎,答知乎";
+        //match(regExp/subStr): 查找字符串中满足正则格式或满足指定字符串的内容
+        var result=str.match("知乎");
+        console.log(result);
+        //定义正则,表示查找内容
+        var regexp=/\d(6,10)/ig;
+        var reg2=/知乎/ig;
+        var res2=str.match(reg2);
+        console.log(res2);
+        //replace(regExp/subStr,newStr): 根据正则表达式或字符串查找相关内容并进行替换
+        var res3=str.replace(reg2,"新浪");
+        console.log(res3,str);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

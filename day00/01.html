@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>展示页面</title>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <style>
+        body,div{
+            margin:0px;
+            border:0px;
+        }
+        html{
+            height:100%;
+        }
+        body{
+            background-image:linear-gradient(to bottom, #484848, #191919);
+            height:100%;
+        }
+        #navbar{
+            height:62px;
+            width:100%;
+            background-image:linear-gradient(to right, #6fc, #1eb);
+            overflow:hidden;
+            transition:1s;
+            position:fixed;
+        }
+        #d1{
+            //background:purple;
+            float:left;
+            margin:0 25px ;
+            background-image:url("/static/01.jpeg");
+        }
+        #d2{
+            background:red;
+            float:left;
+            margin:0 25px;
+        }
+        #d3{
+            background:orange;
+            float:left;
+            margin:0 25px;
+        }
+        #d1,#d2,#d3{
+            width:400px;
+            height:400px;
+            margin-top:100px;
+        }
+        #y,#month,#day{
+            width:130px;
+            height:30px;
+        }
+    </style>
+    <script>
+        function day31(){
+            return[1,2,3,4,5,6,7,8,9,10,11,
+            12,13,14,15,16,17,18,19,20,21,
+            22,23,24,25,26,27,28,29,30,31]
+        }
+        function day30(){
+            return[1,2,3,4,5,6,7,8,9,10,11,
+            12,13,14,15,16,17,18,19,20,21,
+            22,23,24,25,26,27,28,29,30]
+        }
+        function day29(){
+            return[1,2,3,4,5,6,7,8,9,10,11,
+            12,13,14,15,16,17,18,19,20,21,
+            22,23,24,25,26,27,28,29]
+        }
+        function day28(){
+            return[1,2,3,4,5,6,7,8,9,10,11,
+            12,13,14,15,16,17,18,19,20,21,
+            22,23,24,25,26,27,28]
+        }
+        var days31=day31();
+        var days30=day30();
+        var days29=day29();
+        var days28=day28();
+        //加载每个月的天数
+        function load_day(){
+            //1.获取年
+            var y=document.getElementById("year");
+            var m=document.getElementById("month");
+            var d=document.getElementById("day");
+            //刷新每月的天数
+            d.innerHTML = "<option>请选择</option>";
+            var y1=parseInt(y.value) ;
+            var m1=parseInt(m.value) ;
+            if (m1<8&&m1%2==1||m1>=8&&m1%2==0) {
+                for(var i =0;i<days31.length;i++){
+                    var opt = document.createElement("option");
+                    opt.innerHTML = days31[i];
+                    d.appendChild(opt);
+                }
+            }else if((y1%400==0||y1%100!=0&&y1%4==0)&&m1==2){
+                for(var i =0;i<days29.length;i++){
+                var opt = document.createElement("option");
+                opt.innerHTML = days29[i];
+                d.appendChild(opt);
+                }
+            }else if(m1==2){
+                for(var i =0;i<days28.length;i++){
+                    var opt = document.createElement("option");
+                    opt.innerHTML = days28[i];
+                    d.appendChild(opt);
+                }
+            }else {
+                for(var i =0;i<days30.length;i++){
+                var opt = document.createElement("option");
+                opt.innerHTML = days30[i];
+                d.appendChild(opt);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--导航栏-->
+    <div id="navbar"></div>
+    <!--页面主体-->
+    <div id="pageBody">
+        <!--数据展示空间都往这个div填充-->
+        <div id="d1">
+            <select name="year" id="y">
+                <option>请选择</option>
+                <option>2005</option>
+                <option>2006</option>
+                <option>2007</option>
+                <option>2008</option>
+                <option>2009</option>
+                <option>2010</option>
+                <option>2011</option>
+                <option>2012</option>
+                <option>2013</option>
+                <option>2014</option>
+                <option>2015</option>
+                <option>2016</option>
+                <option>2017</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+            </select>
+            <select id="month" οnchange="load_day()">
+                <option>请选择</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>
+            <select id="day">
+                <option>请选择</option>
+            </select>
+        </div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+    </div>
+</body>
+</html>

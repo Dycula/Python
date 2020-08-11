@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/bookstore/add2">添加图书</a>
+    <a href="/">返回网站主页</a>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>书名</th>
+            <th>出版社</th>
+            <th>价格</th>
+            <th>修改</th>
+            <th>删除</th>
+        </tr>
+        {% for b in books %}
+        <tr>
+            <td>{{ b.id }}</td>
+            <td>{{ b.title }}</td>
+            <td>{{ b.pub }}</td>
+            <td>{{ b.price }}</td>
+            <td>
+                <a href="bookstore/mod?id={{ b.id }}">修改</a>
+            </td>
+            <td>
+                <a href="bookstore/del?id={{ b.id }}">删除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

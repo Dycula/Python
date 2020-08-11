@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="c1" id="d1">fine,thank,and you</h1>
+    <h1 class="c1">岁月静好,感恩有你,与你相随</h1>
+    <input type="text" name="username">
+    <button id="btn">取值</button>
+    <div id="show"></div>
+    <script>
+        //获取元素的操作只能等待标签解析完毕后执行
+        //1.根据标签名获取元素
+        var list1=document.getElementsByTagName("h1");
+        console.log(list1);
+        console.log(list1[0],list1[0].innerHTML);
+        //2.根据class属性值获取元素
+        var list2=document.getElementsByClassName("c1");
+        console.log(list2);
+        //3.根据id属性值获取元素
+        var elem=document.getElementById("d1");
+        console.log(elem);
+        //标签属性都是元素节点对象的属性
+        console.log(elem.id,elem.calssName);
+        elem.style="color:red;text-align:center;";
+        //4.根据name属性值获取元素列表
+        var list3=document.getElementsByName("username");
+        console.log(list3);
+
+        //操作文本内容或值
+        elem.innerHTML="<a href>少年啊</a>";
+        console.log(elem.innerHTML);
+        elem.innerText="<a href>少女啊</a>";
+        console.log(elem.innerText);
+        btn.onclick=function(){
+            //获取表单控件的值
+            console.log(list3[0].value);
+            show.innerHTML="<h1>"+list3[0].value+"</h1>";
+        };
+
+        /*创建输入框,按钮和div,点击按钮时将输入框中的内容一一级标题的形式显示在div中*/
+
+    </script>
+</body>
+</html>

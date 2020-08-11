@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background:red;
+        }
+        #d1{
+            background:green;
+            position:relative;
+            z-index:1;
+            /*只有定位元素才能使用偏移属性调位置*/
+            /*
+
+            top:100px;
+            left:100px;
+            */
+        }
+        #d2{
+            position:relative;
+            left:100px;
+            bottom:-100px;
+        }
+        #d2:hover{
+            /*调整堆叠次序.属性:z-index
+            取值为无单位的整数,值越大越靠上;只有定位元素能够
+            使用z-index属性调整次序*/
+            z-index:10;
+        }
+    </style>
+</head>
+<body>
+    <!--正常元素与定位元素发生堆叠,永远是定位元素在上方显示-->
+    <!--同为定位元素发生堆叠,根据标签书写顺序,后来者居上-->
+    <div id="d2"></div>
+    <div id="d1"></div>
+    <h1>
+        实现网页:
+        上方为导航栏(包含若干导航项,包含下拉菜单)
+        下方为轮播图区域(包含图片,图片索引,左右按钮)
+    </h1>
+</body>
+</html>

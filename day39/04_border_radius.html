@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:300px;
+            height:50px;
+            background:purple;
+            /*上　右　下　左*/
+            /*border-radius:10px 20px 30px 50px;*/
+            /*百分比表示参照元素自身尺寸,分别计算横轴半径和纵轴半径
+            统一设置四个角的圆角半径时,最多取到50%改变形状*/
+            /*border-radius:50%;*/
+            border-radius:25px;
+            /*创建h1,设置尺寸200*200,自定义背景颜色,鼠标悬停时修改背景颜色并且显示为圆形*/
+        }
+        h1{
+        width:200px;
+        height:200px;
+        background:pink;
+        /*过渡属性:在元素俩种状态切换时添加平滑过渡效果*/
+        transition:3s;
+        }
+        h1:hover{
+        background:purple;
+        border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <h1></h1>
+</body>
+</html>

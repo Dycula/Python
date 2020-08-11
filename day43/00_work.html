@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //闰年判断
+        function isrun(y){
+            var r= y%4==0&&y%100!=0 || y%400==0;
+            return r;
+        }
+        //主函数
+        /*使用函数封装日期计算,闰年判断封装成函数
+        主体功能封装成函数,通过按钮点击调用
+        <button onclick="fn()">*/
+        function show(){
+            var year=prompt("请输入年份:");
+            console.log(isrun(year));
+        }
+    </script>
+</head>
+<body>
+    <button onclick="show">日期计算</button>
+</body>
+</html>

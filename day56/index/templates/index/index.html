@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% if "user" in request.session %}
+        欢迎：{{ request.session.user.name }}
+        <a href="/user/logout">退出登录</a>
+    {% esle %}
+        <a href="/user/login">登录</a>
+        <a href="/user/reg">注册</a>
+    {% endif %}
+    {% if "user" in request.session %}
+    <div>
+        <a href="/note/">进入我的笔记</a>
+    </div>
+    <div>
+        <img src="/static/files/meinv.png" alt="美女">
+    </div>
+    {% endif %}
+</body>
+</html>

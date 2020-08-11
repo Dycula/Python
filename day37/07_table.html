@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table border="4px" width="200px" height="100px">
+        <tr>
+            <!--th表示单元格,自带文本加粗和居中效果-->
+            <th>姓名</th>
+            <!--跨列合并-->
+            <th colspan="3">个人信息</th>
+            <!--<th>年龄</th>-->
+            <!--<th>性别</th>-->
+            <!--<th>三围</th>-->
+        </tr>
+        <tr>
+            <td>波多</td>
+            <!--向下合并单元格(跨行合并)-->
+            <td rowspan="2">31</td>
+            <td>女</td>
+            <td>88-59-85</td>
+        </tr>
+        <tr>
+            <td width="200px" height="100px">小泽</td>
+            <!--删除被合并的单元格-->
+            <td>女</td>
+            <td>90-60-85</td>
+        </tr>
+    </table>
+    <table border="1px" width="300px" height="200px">
+        <!--表格内部结构划分(行分组)：
+        将若干行划分为表头,表尾和表体主体,
+        默认所有的行都会被自动加入表格主体中-->
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th colspan="3">总人数：</th>
+        </tr>
+        </tfoot>
+        <tbody>
+        <tr>
+            <td>叶良辰</td>
+            <td>25</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>叶美景</td>
+            <td>24</td>
+            <td>女</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

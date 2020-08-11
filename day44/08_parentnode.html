@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div>
+        <p>参考</p>
+        示例
+        <h1 id="c1" class="d1">
+            <span>h1---span</span>
+        </h1>
+        <p>参考</p>
+    </div>
+    <script>
+        var h1=$("h1");
+        var div=$("div");
+        //获取唯一的父节点
+        console.log(h1.parentNode);
+        //获取子节点数组(包含文本节点和元素节点)
+        console.log(div.childNodes);
+        //获取子元素数组(只包含直接子元素)
+        console.log(div.children);
+        //获取兄弟节点
+        console.log(h1.previousSibling);
+        console.log(h1.nextSibling);
+        //获取元素兄弟节点
+        console.log(h1.previousElementSibling);
+        console.log(h1.nextElementSibling);
+        //获取属性节点数组
+        console.log(h1.attributes);
+
+        //节点的创建,添加和移除
+        //创建元素节点
+        var h2=document.createElement("h2");
+        console.log(h2);
+        h2.innerHTML="动态添加";
+        h2.id="d2";
+        //添加操作,由父节点操作
+        document.body.appendChild(h2);//追加只父元素的末尾
+        //节点与页面中的元素一一对应,想在页面中国出现及格元素,就需要创建几个节点
+        var h3=document.createElement("h3");
+        //指定位置添加
+        document.body.insertBefore(h3,h2);
+        //移除节点
+        document.body.removeChild(div);
+    </script>
+</body>
+</html>

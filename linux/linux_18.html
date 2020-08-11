@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第18页</title>
+    <style>
+        div{
+            border:1px solid black;
+            width:800px;
+        }
+        #d1{
+           position:fixed;
+           top:20px;
+        }
+        #d2{
+           position:fixed;
+           top:20px;
+           left:500px;
+
+
+        }
+        p{
+            padding-left:10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="linux_17.html" id="d1">上一页</a>
+        <a href="linux_19.html" id="d2">下一页</a>
+        <h1>18、文件压缩解压:bzip2</h1>
+
+        <p>tar与bzip2命令结合使用实现文件打包、压缩(用法和gzip一样)。</p>
+        <p>tar只负责打包文件,但不压缩,用bzip2压缩tar打包后的文件,其扩展名一般用xxxx.tar.gz2。</p>
+        <p>在tar命令中增加一个选项(-j)可以调用bzip2实现了一个压缩的功能,实行一个先打包后压缩的过程。</p>
+        <p>压缩用法:tar -jcvf 压缩包包名 文件...(tar jcvf bk.tar.bz2 *.c)</p>
+        <p>解压用法:tar -jxvf 压缩包包名 (tar jxvf bk.tar.bz2)</p>
+        <p>压缩</p>
+        <img src="img/18_bzip201.png" alt="">
+        <p>解压</p>
+        <img src="img/18_bzip202.png" alt="">
+
+        <br>
+
+
+    </div>
+</body>
+</html>
