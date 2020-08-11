@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>注册</title>
+        <script src="../static/js/jquery-1.9.1.min.js"></script>
+
+    </head>
+    <body>
+
+        <div id="acc" style="width: 60%;margin-left: 20%;padding-top: 20px;margin-bottom: 20px; text-align: center">
+             <div style="margin-top: 20px;">
+                <h1>用户注册</h1>
+            </div>
+            <div style="margin-top: 20px;">
+                <span style="width: 90px; margin-left: 20px; display: inline-block">用户名：</span>
+                <span><input type="text" id="username" name="username"></span>
+            </div>
+            <div style="margin-top: 20px;">
+                <span style="width: 90px; margin-left: 20px; display: inline-block">密码：</span>
+                <span><input type="password" id="password" name="password"></span>
+            </div>
+            <div style="margin-top: 20px;">
+                <span style="width: 90px; margin-left: 20px; display: inline-block">确认密码：</span>
+                <span><input type="password" id="cpassword" name="cpassword"></span>
+            </div>
+            <div style="margin-top: 20px;">
+                <span style="width: 90px; margin-left: 20px; display: inline-block">真实姓名：</span>
+                <span><input type="text" id="realname" name="realname"></span>
+            </div>
+            <div style="margin-top: 20px;">
+                <span style="width: 90px; margin-left: 20px; display: inline-block">邮箱：</span>
+                <span><input type="email" id="email" name="email"></span>
+            </div>
+            <div style="margin-top: 20px;">
+                <span style="width: 90px; margin-left: 20px; display: inline-block">手机号：</span>
+                <span><input type="text" id="phone" name="phone"></span>
+            </div>
+            <div style="margin-top: 20px;">
+                <span style="width: 90px; margin-left: 20px; display: inline-block">身份证号：</span>
+                <span><input type="text" id="identify" name="identify"></span>
+            </div>
+            <div style="margin-top: 20px;">
+                <span id="error" style=" margin-left: 20px;color: red; display: inline-block"></span>
+
+            </div>
+            <div style="margin-top: 20px;">
+                <span><input type="button" id="register" name="register" disabled=true value="注册" ></span>
+                <span><input type="button" id="cancel" name="cancel" value="取消"></span>
+            </div>
+
+        </div>
+
+
+
+
+        <script>
+            $("#acc input").blur(function () {
+                $("#register").attr("disabled",false);
+            });
+
+
+
+            $('#register').on('click',function(){
+                $.ajax({
+                type:'post',
+                url:'http://localhost:8001/userinfo/myregister/',
+                data:{
+                    'username':$('#username').val(),
+                    'password':$('#password').val(),
+                    'cpassword':$('#cpassword').val(),
+                    'realname':$('#realname').val(),
+                    'email':$('#email').val(),
+                    'phone':$('#phone').val(),
+                    'identify':$('#identify').val(),
+
+                },
+                dataType:'json',
+                success:function(response){
+                        if(response.result==true){
+                            location.href="http://localhost:8001/front_login"
+
+                        }else{
+                            $("#error").text(response.error);
+                        }
+                },
+                error:function () {
+
+                },
+
+            })
+
+
+            })
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

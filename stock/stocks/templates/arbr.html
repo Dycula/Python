@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>登录</title>
+        <script src="../static/js/jquery-1.9.1.min.js"></script>
+        <script src="../static/js/echarts.min.js"></script>
+
+    </head>
+    <body>
+        <div id="industry" style="width: 600px;height: 400px;"></div>
+        <script>
+            var myChart = echarts.init(document.getElementById("industry"));
+
+            var trade_date = [];
+            var AR_data = [];
+            var BR_data = [];
+
+            $.ajax({
+                type:'get',
+                url:'http://localhost:8001/stocks/arbr/',
+                data:'',
+                dataType:'json',
+                async:false,
+                success:function (response) {
+                   trade_date = response.data.trade_date;
+                   AR_data = response.data.AR;
+                   BR_data = response.data.BR;
+                },
+                error:function (error) {
+
+                },
+            })
+
+        var xAxisData = trade_date;
+        var data1 = AR_data;
+        var data2 = BR_data;
+
+        option = {
+            title: {
+                text: '股票情绪指标ＡＲＢＲ'
+            },
+            legend: {
+                data: ['AR', 'BR'],
+                align: 'left'
+            },
+            toolbox: {
+                // y: 'bottom',
+                feature: {
+                    magicType: {
+                        type: ['stack', 'tiled']
+                    },
+                    dataView: {},
+                    saveAsImage: {
+                        pixelRatio: 2
+                    }
+                }
+            },
+            tooltip: {},
+            xAxis: {
+                data: xAxisData,
+                silent: false,
+                splitLine: {
+                    show: false
+                }
+            },
+            yAxis: {
+            },
+            series: [{
+                name: 'AR',
+                type: 'bar',
+                data: data1,
+                animationDelay: function (idx) {
+                    return idx * 10;
+                }
+            }, {
+                name: 'BR',
+                type: 'bar',
+                data: data2,
+                animationDelay: function (idx) {
+                    return idx * 10 + 100;
+                }
+            }],
+            animationEasing: 'elasticOut',
+            animationDelayUpdate: function (idx) {
+                return idx * 5;
+            }
+        };
+
+
+
+        myChart.setOption(option);
+
+
+        </script>
+    </body>
+</html>

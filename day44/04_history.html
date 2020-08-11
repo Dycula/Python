@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        console.log(history);
+    </script>
+</head>
+<body>
+    <a href="00_work.html">页面一</a>
+    <a href="01_bom.html">页面二</a>
+    <button onclick="console.log(history.length)">获取length</button>
+    <button onclick="history.back()">返回</button>
+    <button onclick="history.forward()">前进</button>
+    <button onclick="history.go(1)">go1</button>
+    <!--历史记录的长度变化:
+    1.通过超链接在当前窗口访问其他URL,会造成历史记录增加
+    2.前进和后退不会造成历史记录的变化,只是指针的移动
+    3.历史记录的额进出栈管理:A--B--C
+    从页面C后退至页面A,在A中通过超链接跳转值页面C  A--C  -->
+
+</body>
+</html>

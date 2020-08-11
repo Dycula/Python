@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #banner{
+            width:300px;
+            height:250px;
+            position:relative;
+        }
+        a{
+            color:#fff;
+            background:orange;
+            position:absolute;
+            width:100px;
+            height:30px;
+            right:10px;
+            /*根据参照物对应方向的值计算偏移量
+            (250*50%)*/
+            top:50%;
+            /*通过外边距微调元素的位置*/
+            margin-top:-15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <img src="northStar.jpg" alt="">
+        <a href="">下一张</a>
+
+    </div>
+</body>
+</html>

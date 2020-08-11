@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width:500px;
+            margin:0 auto;
+            background:orange;
+            /*设置为定位元素*/
+            position:relative;
+        }
+        #d1,#d2{
+            width:200px;
+            height:200px;
+            background:red;
+        }
+        #d1{
+            background:green;
+            /*绝对定位*/
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        body{
+            /*设置为定位元素*/
+            position:relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="d1"></div>
+        <div id="d2"></div>
+    </div>
+</body>
+</html>

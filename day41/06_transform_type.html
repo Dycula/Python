@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    //1.强制类型转换
+    //(1)转字符串
+    var a=100;
+    var b=true;
+    var a1=a.toString();
+    var b1=b.toString();
+    console.log(a1,typeof a1);
+    console.log(b1,typeof b1);
+
+    //(2)转number
+    /*整体转number,使用Number()*/
+    var s1="101";
+    var s2="101a";
+    var s3="true";
+    var s4=true;
+    console.log(Number(s1),s1);//101,101
+    console.log(Number(s2),s2);//NaN,101a
+    console.log(Number(s3),s3);//NaN,true
+    console.log(Number(s4),s4);//1,true
+    /*parseInt(param)和parseFloat(param): 提取字符串中的number部分*/
+    console.log(parseInt(35.5));//35
+    console.log(parseInt("a35.5"));//NaN
+    console.log(parseFloat(35.5));//35.5
+
+    //(3)Boolean
+    /*除"零"值以外,其他数据都为真,只有"零"为假*/
+    console.log(Boolean(1));//true
+    console.log(Boolean("1"));//true
+    /*以下为"零"值*/
+    console.log(Boolean(0));//false
+    console.log(Boolean(0.0));//false
+    console.log(Boolean(""));//false
+    console.log(Boolean(null));//false
+    console.log(Boolean(undefined));//false
+    console.log(Boolean(NaN));//false
+
+    //2.隐式类型转换(自动转换)
+    /*以数学运算为例(+ - * / %)*/
+    var r1="少年"+"python";//少年python
+    var r2="少女"+23;//少女23
+    var r3="少女"+true;//少女true
+    var r4="少女"+null;//少女null
+    var r5="少女"+NaN;//少女NaN
+    var r6="少女"+undefined;//少女undefined
+    var r7="少女"+10+5;//少女105
+    var r8=10+5+"少女";//15少女
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

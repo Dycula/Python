@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div,h1{
+            width:100px;
+            height:100px;
+            margin:200px auto;
+            background-color:pink;
+            background-image:url(wxy.jpeg);
+            background-repeat:no-repeat;
+            /*background-position:-100px -100px;*/
+            /*background-position:right bottom;*/
+            /*background-position:10% 10%;*/
+        }
+        div:hover{
+            background-position:-130px -10px;
+        }
+        h1{
+            width:500px;
+            height:500px;
+            margin:0 auto;
+            /*background-size特殊取值：
+            cover将图片等比拉伸至足够大,完全覆盖元素,超出部分不可见
+            contain将图片拉伸至刚好被元素容纳*/
+            /*background-size:500px;*/
+            /*background-size:100%;*/
+            background-size:contain;
+        }
+        h2{
+            width:500px;
+            height:500px;
+            background:cyan url(wxy.jpeg) no-repeat center;
+            font:italic 400 32px youyuan;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <h2>字体样式展示</h2>
+    <div></div>
+</body>
+</html>

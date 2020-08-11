@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <!--引入jquery文件-->
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <h1 id="d1">过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <h1 class="c1">过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <button id="btn1">:first</button>
+    <button id="btn2">:last</button>
+    <button id="btn3">:odd</button>
+    <button id="btn4">:evne</button>
+    <button id="btn5">:eq()</button>
+    <button id="btn6">:lt()</button>
+    <button id="btn7">:gt()</button>
+    <button id="btn8">:not()</button>
+    <script>
+        btn1.onclick=function(){
+            $("h1:first").css("color","red");
+        };
+        btn2.onclick=function(){
+            $("h1:last").css("color","green");
+        };
+        btn3.onclick=function(){
+            $("h1:odd").css("color","blue");
+        };
+        btn4.onclick=function(){
+            $("h1:even").css("color","pink");
+        };
+        btn5.onclick=function(){
+            $("h1:eq(3)").css("color","cyan");
+        };
+        btn6.onclick=function(){
+            $("h1:lt(3)").css("color","purple");
+        };
+        btn7.onclick=function(){
+            $("h1:gt(3)").css("color","orange");
+        };
+        btn8.onclick=function(){
+        //匹配下标不为3的所有h1
+            $("h1:not(3)").css("color","brown");
+        };
+    </script>
+</body>
+</html>

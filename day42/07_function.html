@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //1.元素参数无返回值的函数
+        //函数声明
+        function f1(){
+            console.log("f1被调用");
+        }
+        //函数调用
+        f1();
+        //2.带有参数的函数
+        //允许形参与实参个数不匹配
+        function f2(a,b){//形参未传值，默认为undefined
+            console.log(a*a,b);
+            //函数内部可以使用arguments获取实际传递的参数
+            console.log(arguments);
+        }
+        f2(5);//函数调用时将实际参数赋值给形式参数
+        //3.带有返回值的函数
+        function f3(a){
+            var r1=a**2;
+            var r2=a+a;
+            //将函数内部的变量传递给外界使用
+            //只能返回一个值,后面的代码都不执行
+            return r1 ,r2;
+            console.log("函数使用")
+        }
+        //全局变量r1
+        var r1=f3(10);
+        console.log(r1);//20
+
+        /*全局变量:
+        1.函数体外部声明的变量一定是全局变量
+        2.一切省略var关键字创建的变量是全局变量
+        局部变量:在函数内部使用var关键字创建的变量为局部变量
+        */
+        var age=18;
+        function fn(){
+            var age=23;
+            name="杨";
+            //就近访问当前作用域中的变量
+            console.log(age);
+        }
+        fn();
+        console.log(age,name);
+        /*使用函数封装日期计算
+        闰年判断封装成函数
+        主体功能封装成函数,通过按钮点击调用
+        <button onclick="fn()">*/
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(window);
+        //window对象的方法
+        //1.网页弹框
+        alert("操作有误");//无返回值
+        var r=confirm("是否确认");//返回布尔值
+        console.log(r);
+        //prompt可以接收俩个参数("提示信息",输入框的默认值)
+        var r1=prompt("请输入",0);
+        console.log(r1);
+        /*全局变量和全局函数都是window对象的属性和方法*/
+        var a=100;
+        function a1(){
+            console.log("a1被调用");
+        }
+        console.log(window);
+        console.log(a,window.a);
+        a1();
+        window.a1();
+        //窗口的打开和关闭
+        window.open("http://www.baidu.com");
+        window.close();
+        /*给出确认框,当点击确定时打开目标文件,点击取消是关闭当前窗口*/
+        var r=confirm("");
+        if(r){
+            window.open("http://www.baidu.com");
+        }else{
+            window.close();
+        }
+    </script>
+</body>
+</html>

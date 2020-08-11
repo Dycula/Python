@@ -1,0 +1,237 @@
+/*1.导航栏*/
+#nav{
+    margin-top:50px;
+}
+/*1.1三列布局*/
+.nav_top{
+    overflow:hidden;
+    margin-bottom:20px;
+}
+/*左列logo*/
+.nav_top>img{
+    float:left;
+    width:168px;
+    border-radius:10px;
+}
+/*中间搜索栏*/
+.search{
+    float:left;
+    margin-left:113px;
+    position:relative;
+}
+.search input{
+    width:380px;
+    height:36px;
+    border:1px solid #999;
+    border-radius:18px;
+    padding:0;
+    padding-left:10px;
+    padding-right:40px;
+}
+.search img{
+    width:36px;
+    height:36px;
+    position:absolute;
+    right:0;
+    top:1px;
+}
+/*右列导航*/
+.nav_top>ul{
+    float:right;
+    margin-top:9px;
+}
+.nav_top>ul>li{
+    float:left;
+}
+.nav_top>ul>li b{
+    margin:0 10px;
+}
+.nav_top>ul>li img{
+    vertical-align:top;
+}
+/*1.2文字导航*/
+.nav_bottom a{
+    font-size:16px;
+    margin-right:30px;
+}
+/*2.主体*/
+#main{
+    margin-top:50px;
+    position:relative;
+    padding-bottom:50px;
+}
+/*2.1购物车标题*/
+#main>h2{
+    color:#333;
+}
+#main>h2>p{
+    float:right;
+    font-size:12px;
+    color:#9a9a9a;
+    font-weight:400;
+}
+#main>h2>p span{
+    margin-left:30px;
+}
+.total_count,.total_price{
+    color:#997679;
+    font-size:14px;
+}
+/*2.2工具栏*/
+#main .toolbar{
+    height:35px;
+    line-height:35px;
+    background:#e6e6e5;
+    border-top:1px solid gray;
+    text-align:center;
+    box-shadow:0 2px 3px gray;
+    margin-bottom:15px;
+    margin-top:5px;
+    color:#808080;
+}
+.toolbar div{
+    float:left;
+}
+/*设置每一栏的宽度*/
+.check{
+    width:62px;
+}
+.info{
+    width:380px;
+}
+.price{
+    width:152px;
+}
+.count{
+    width:150px;
+}
+.sum{
+    width:130px;
+}
+.action{
+    width:126px;
+    /*修改鼠标形状default(箭头)/pointer(手指)*/
+    cursor:default;
+}
+/*2.3商品记录显示*/
+.content{
+    /*设置最小高度*/
+    min-height:300px;
+}
+.item{
+    height:115px;
+    text-align:center;
+    background:#fff;
+    border-top:1px solid gray;
+    border-bottom:1px solid gray;
+    margin-bottom:10px;
+}
+.item div{
+    float:left;
+    height:115px;
+    box-sizing:border-box;
+    text-align:center;
+}
+/*商品栏设置*/
+.item .check{
+    line-height:115px;
+}
+.item .info img{
+    float:left;
+    margin-right:20px;
+    margin-top:15px;
+}
+.item .info p{
+    text-align:left;
+}
+.item .info p:nth-child(2){
+    margin:15px 0 10px 0;
+}
+.item .info p:nth-child(3){
+    margin:5px 0 10px 0;
+}
+.item .price h3{
+    color:#997679;
+    margin-top:40px;
+}
+.item .count a{
+    float:left;
+    width:26px;
+    height:26px;
+    text-align:center;
+    line-height:26px;
+    border:1px solid gray;
+    background:#e8e8e8;
+    color:#333;
+    margin-top:43px;
+}
+.item .count input{
+    float:left;
+    width:26px;
+    height:26px;
+    border:1px solid gray;
+    border-left:none;
+    border-right:0;
+    padding:0;
+    text-align:center;
+    margin-top:43px;
+}
+a.minus{
+    margin-left:34px;
+}
+.item .sum,.item .action{
+    line-height:115px;
+}
+/*2.4底部工具栏*/
+.bottom _bar{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:30px;
+    background:gray;
+    line-height:30px;
+}
+.bottom_bar>div{
+    float:right;
+}
+.bottom_bar button{
+    width:120px;
+    height:30px;
+    border:none;
+    background:#997679;
+    color:#fff;
+    font-size:16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

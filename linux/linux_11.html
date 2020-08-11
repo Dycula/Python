@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第11页</title>
+    <style>
+        div{
+            border:1px solid black;
+            width:800px;
+        }
+        #d1{
+           position:fixed;
+           top:20px;
+        }
+        #d2{
+           position:fixed;
+           top:20px;
+           left:500px;
+        }
+        p{
+            padding-left:10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="linux_10.html" id="d1">上一页</a>
+        <a href="linux_12.html" id="d2">下一页</a>
+        <h1>11、查看或者合并文件内容:cat</h1>
+
+        <p>cat命令可查看文件的全部内容，与more分页查看不同；</p>
+        <p>cat命令还可以合并多个文件到一个文件</p>
+        <p>格式 :</p>
+        <p>	cat  文件1  …. 文件n  > 文件n+1  </p>
+        <p>	cat  文件1  …. 文件n  >> 文件n+1</p>
+        <p> > 表示如果文件n+1 存在，则合并内容覆盖之前记录；不存在，创建。</p>
+        <p> >> 表示如果文件n+1 存在，则在之前记录后，续加合并内容；不存在，创建。</p>
+
+        <img src="img/11_cat.png" alt="">
+
+        <br>
+
+
+    </div>
+</body>
+</html>

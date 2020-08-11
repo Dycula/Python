@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            width:600px;
+            border:1px solid #000;
+        }
+        th,td{
+            border:1px solid #000;
+        }
+    </style>
+    <script>
+        function add(){
+            //1.获取输入框
+            var list=document.getElementsByTagName("input");
+            //2.获取输入框的值
+            var gname=list[0].value;
+            var gprice=list[1].value;
+            var gcount=list[2].value;
+            //3.创建元素标签
+            var tr=document.createElement("tr");
+            var td1=document.createElement("td");
+            td1.innerHTML=gname;
+
+            var td2=document.createElement("td");
+            td2.innerHTML=gprice;
+
+            var td3=document.createElement("td");
+            td3.innerHTML=gcount;
+
+            var td4=document.createElement("td");
+            td4.innerHTML="<button>修改</button>　<button>移除</button>";
+            //4.添加显示
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tbody.appendChild(tr);
+        }
+    </script>
+</head>
+<body>
+    /*参照效果图(添加元素练习)*/
+    <div>
+        <input type="text" name="gname" placeholder="商品名称">
+        <input type="text" name="gprice" placeholder="商品价格">
+        <input type="text" name="gcount" placeholder="商品数量">
+        <button onclick="add()">增加</button>
+    </div>
+    <table>
+        <thread>
+            <tr>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品数量</th>
+                <th>
+                    <button>操作</button>
+                </th>
+            </tr>
+        </thread>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+</html>

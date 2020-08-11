@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/static/common.js"></script>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+      /**
+       * 为 #btnPost 绑定 click 事件
+       */
+      $("#btnPost").click(function(){
+        //1.创建xhr
+        var xhr = createXhr();
+        //2.创建请求
+        xhr.open("post","/ajax/server01/",true);
+        //3.设置回调函数
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState==4 && xhr.status == 200){
+            alert(xhr.responseText);
+          }
+        }
+        //4.设置请求消息头
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        //5.发送请求
+        var uname = $("#uname").val();
+        var upwd = $("#upwd").val();
+        //console.log(uname);
+        // 获取csrfmiddlewaretoken的值
+        var csrf = $("[name='csrfmiddlewaretoken']").val();
+        var params = "uname="+uname+"&upwd="+upwd+"&csrfmiddlewaretoken="+csrf;
+        xhr.send(params);
+      });
+    });
+    </script>
+</head>
+<body>
+    {% csrf_token %}
+    <p>用户名称
+        <input type="text" id="name">
+    </p>
+    <p>用户密码
+        <input type="password" id="upwd">
+    </p>
+    <p>
+        <input type="button" id="btnPost" value="提交">
+    </p>
+</body>
+</html>

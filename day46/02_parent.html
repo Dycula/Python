@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--引入jquery文件-->
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <div id="box">
+        <b>加粗</b>
+        <span>参考</span>
+        <p>
+            <span>p--->span</span>
+        </p>
+        <span>参考</span>
+        <b>加粗</b>
+        <a href=""></a>
+    </div>
+    <script>
+        //获取父元素
+        console.log($("p").parent());
+        //获取祖先元素
+        console.log($("p").parents(),$("p").parents("#box"));
+        //获取直接子元素数组
+        console.log($("div").children(),$("div").children("p"));
+        //获取所有后代元素
+        console.log($("div").find("span"));
+        //获取前后的兄弟元素
+        console.log($("p").prev(),$("p").next());
+        console.log($("p").prev("b"),$("p").next("b"));
+        //获取所有的兄弟元素
+        console.log($("p").siblings(),$("p").siblings("b"));
+        //元素的创建　
+        var h1=$("<h1 id='d2'>动态创建</h1>");
+        var h2=$("<h2></h2>");
+        h2.html("二级标题");
+        console.log(h1,h2);
+        //添加节点
+        //作为子元素添加带父元素的头尾位置
+        $("#box").append(h1);//末尾
+        $("#box").prepend(h2);//开头
+        //作为兄弟元素添加
+        $("#box").after(h1).before(h2);
+        /*创建h3,h4元素节点,文本内容不限,作为div的头尾子元素添加值页面显示
+        再创建俩个超链接标签,分别显示在h3之后,h4之前*/
+        var h3=$("<h3>良辰</h3>");
+        var h4=$("<h4>美景</h4>");
+        $("#box").append(h3);
+        $("#box").prepend(h4);
+        var a=$("<a href=>a</a>");
+        var b=$("<a href=>b</a>");
+        h3.after(a);
+        h4.before(b);
+        //移除元素
+        h3.remove();
+    </script>
+</body>
+</html>

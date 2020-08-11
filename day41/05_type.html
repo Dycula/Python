@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //1.number整数类型
+        var a=100;
+        //八进制表示 以0为前缀
+        var b=063;
+        console.log(b)//结果为十进制的6*8**1+3*8**0=51
+        //十六进制以0x为前缀
+        var c=0x63;
+        console.log(c)//结果为十进制的6*16**1+3*16**0=51
+        /*科学计数法*/
+        var n=1.5e3;//结果为1.5*10**3=1500
+        console.log(n);
+
+        //2. string 字符串类型
+        var s1="少年";
+        var s2="32";
+        console.log(s1,s2);
+
+        //3. boolean 布尔类型 只有真和假两个值
+        var flag1=false;
+        var flag2="false";
+        console.log(flag1,flag2,typeof flag1, typeof flag2);
+
+        //4. undefined 特殊值,变量声明未赋值时显示undefined
+        var k;
+        console.log(k);
+
+        //5. null 空类型 解除对象引用时使用null,表示对象为空
+        var obj=null;
+        console.log(obj);
+
+        //typeof运算符,用于检测变量的数据类型
+        var obj=null;
+        console.log(obj,typeof boj);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

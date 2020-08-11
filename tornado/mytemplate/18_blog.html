@@ -1,0 +1,100 @@
+{% extends base.html %}
+{% block title %}博客{% end %}
+    <!--<script src="static/js/jqery-3.2.1j.s"></script>-->
+    <!--<script>-->
+        <!--$(function(){-->
+            <!--alert("hello")-->
+        <!--})-->
+    <!--</script>-->
+{% block body %}
+    <ul style="list-style-type:none;width:80%;margin:0px auto;">
+        {% for blog in blogs %}
+        <li>
+            <table border="1px" cellspacing="5px" width="100%">
+                <tr>
+                    <td rowspan="4"  align="center"width="25%">
+                        <table border="1px">
+                            <tr>
+                                <td align="center">
+                                    <img  alt=""  width="128px" height="128px" style="border-radius:50%;"
+                                        {% if blog['avatar']%}
+                                            src={{static_url('images/'+blog['avatar'])}}
+                                        {% else %}
+                                        src='static/images/default_avatar.png'
+                                        {% end %}
+                                    >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <p>{{blog["author"]}}</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        {{blog["title"]}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {{"".join(blog["tag"])}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="min-height:150px;display:block;">
+                            {{blog["content"]}}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        {% if blog["comment"]>0 %}
+                            评论数量:{{blog["comment"]}}
+                        {% else %}
+                            没有评论
+                        {% end %}
+                    </td>
+                </tr>
+            </table>
+        </li>
+        {% end %}
+        <!--<li>-->
+            <!--<table border="1px" cellspacing="5px" width="100%">-->
+                <!--<tr>-->
+                    <!--<td rowspan="4" align="center"width="25%">-->
+                        <!--<table border="1px">-->
+                            <!--<tr>-->
+                                <!--<td align="center">-->
+                                    <!--<img src="http://pic32.nipic.com/20130813/3347542_160503703000_2.jpg" alt=""  width="128px" height="128px" style="border-radius:50%;">-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                            <!--<tr>-->
+                                <!--<td align="center">-->
+                                    <!--<p style="width:100px;border:1px solid blue;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">我是作者我是作者我是作者我是作者我是作者我是作者我是作者我是作者我是作者</p>-->
+                                <!--</td>-->
+                            <!--</tr>-->
+                        <!--</table>-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--博客标题-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>-->
+                        <!--情感　星座　男女-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>-->
+                        <!--<p style="min-height:150px;">博客正文</p>-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td align="right">-->
+                        <!--评论数量:{{myrand(100,200)}}-->
+                    <!--</td>-->
+                <!--</tr>-->
+            <!--</table>-->
+        <!--</li>-->
+    </ul>
+{% end %}

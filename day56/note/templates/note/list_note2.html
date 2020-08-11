@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>笔记列表</title>
+</head>
+<body>
+    <h4>{{ request.session.user.username}}的笔记</h4>
+    <h4><a href="/note/add">添加新笔记</a></h4>
+    <h4><a href="/">返回首页</a></h4>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>标题</th>
+            <th>创建时间</th>
+            <th>修改时间</th>
+            <th>修改</th>
+            <th>删除</th>
+        </tr>
+        {% for note in notes %}
+        <tr>
+            <td>{{ note.id}}</td>
+            <td>{{ note.title}}</td>
+            <td>{{ note.create_time}}</td>
+            <td>{{ note.mod_time}}</td>
+            <td>
+                <a href="/note/mod/{{ note.id }}">修改</a>
+            </td>
+            <td>
+                <a href="/note/del/{{ note.id }}">删除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {# 此处显示页码信息　#}
+    {% if page.has_previous %}
+        <a href="/note/?page={{ page.previous_page_number }}">上一页</a>
+    {% else %}
+    上一页
+    {% endif %}
+    {% for n in paginator.page_range %}
+        {% if n == page.number %}
+            {{ n }}
+        {% else %}
+            <a href="/note/?page={{ n }">{{ n }}</a>
+        {% endif %}
+    {% endfor %}
+    {% if page.has_next %}
+        <a href="/note/?page={{ page.next_page_number }}">下一页</a>
+    {% else %}
+    下一页
+    {% endif %}
+</body>
+</html>

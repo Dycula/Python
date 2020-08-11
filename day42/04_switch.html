@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var week=Number(prompt("请输入0~6之间的数字"));
+        switch(week){
+            case 0://0===0
+                //变量值与case列举的值匹配全等是执行的代码段
+                console.log("星期日");
+                break;
+            case 1:
+                console.log("星期一");
+                break;
+            default:
+                //所有case匹配失败后默认执行的语句
+                console.log("请输入合法值");
+        }
+        //多个case共用代码段
+        var month=prompt("请输入月份");
+        switch(month){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                console.log("31天");
+                break;
+            case 12:
+                console.log("28天");
+                break;
+            default:
+                console.log("30天")
+        }
+        var year=prompt("请输入年份");
+        var month=prompt("请输入月份");
+        var day=prompt("请输入天数");
+        var sum=0;
+        //1.整月天数的累加
+        switch(month-1){
+            case 11:
+            sum +=30;
+            case 10:
+            sum+=31;
+            case 9:
+            sum +=30;
+            case 8:
+            sum+=31;
+            case 7:
+            sum +=31;
+            case 6:
+            sum+=30;
+            case 5:
+            sum +=31;
+            case 4:
+            sum+=30;
+            case 3:
+            sum +=31;
+            case 2:
+            sum+=28;
+            if(year%4==0&&year%100!=0 ||year%400==0){
+                sum++;
+            }
+            case 1:
+            sum+=31;
+        }
+        //2.当前月天数的累加
+        sum+=day;
+        console.log(sum);
+    </script>
+</head>
+<body>
+</body>
+</html>

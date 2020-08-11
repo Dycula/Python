@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书列表</title>
+</head>
+<body>
+    <a href="/bookstore">返回首页</a>
+    <table>
+        <tr>
+            <th>书名</th>
+            <th>出版社</th>
+            <th>定价</th>
+            <th>零售价</th>
+            <th>修改</th>
+            <th>删除</th>
+        </tr>
+        {% for abook in books %}
+        <tr>
+            <td>{{ abook.title }}</td>
+            <td>{{ abook.pub_house }}</td>
+            <td>{{ abook.price }}</td>
+            <td>{{ abook.market_price }}</td>
+            <td>
+                <a href="/bookstore/mod/{{ abook.id }}">修改</a>
+            </td>
+            <td>
+                <a href="/bookstore/del/{{ abook.id }}">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

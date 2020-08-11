@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //1.if语句
+        var a=10;
+        if(a<5){
+            console.log("成立")
+        }
+        if(a>5)console.log("a>5")
+            console.log("测试")
+        //2.if--else语句
+        if(条件){
+            //条件成立时执行的代码段
+        }else{
+            //条件不成立时选择执行
+        }
+        //3.if---else if--else语句(多重分支结构)
+        if(条件){
+            //条件成立时执行的代码段
+        }else if(条件){
+            //条件成立时执行
+        }else{
+            //条件不成立时选择执行
+        }
+        /*接收用户输入的年月日计算该日是该年的第几天*/
+        var year=prompt("请输入年份");
+        var month=prompt("请输入月份");
+        var day=prompt("请输入天数");
+        var a= year%4==0&&year%100!=0 ||year%400==0?"闰年":"平年";
+        day_month01=(31,28,31,30,31,30,31,31,30,31,30,31)
+        day_month02=(31,29,31,30,31,30,31,31,30,31,30,31)
+        if(a="闰年"){
+            //for item in range(0,month-1):
+            //number=day_month02[item]
+            //result+=number
+        }else{
+            //for item in range(0,month-1):
+            //number=day_month01[item]
+            //result+=number
+         }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

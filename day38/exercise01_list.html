@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,ol{
+            /*取消默认内边距*/
+                padding：0;
+            /*取消列表的项目符号*/
+            list-style:none;
+        }
+        ul{
+            width:200px;
+            background:purple;
+            /*设置水平居中*/
+            text-align:center;
+            /*设置鼠标的显示形式,取default(箭头),pointer(手指),text(文本'1')*/
+            cursor:pointer;
+        }
+        ol{
+            /*默认隐藏*/
+            display:none;
+        }
+        .address:hover ol{
+                /*设置显示*/
+                display:block;
+        }
+        ol li:hover{
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="address">
+            北京
+            <ol>
+                <li>北京</li>
+                <li>上海</li>
+                <li>广州</li>
+                <li>深圳</li>
+            </ol>
+        </li>
+    </ul>
+</body>
+</html>

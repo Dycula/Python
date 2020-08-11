@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>传参测试</title>
+</head>
+<body>
+    <h2>myvar={{ myvar }}</h2>
+    <h2>mystr={{ mystr }}</h2>
+    <h2>mylist={{ mylist }}</h2>
+    <h2>mylist[1]={{ mylist.1 }}</h2>
+    <h2>person={{ person }}</h2>
+    <h2>person["age"]={{ person.age }}</h2>
+    <h2>myfun1()={{ myfun1 }}</h2>
+    <h2>你是：
+        {% if money > 1000 %}
+            <b>hello</b>
+        {% elif money > 100 %}
+            <i>hai</i>
+        {% endif %}
+    </h2>
+    {% if money > 0 %}
+    <h2>钱包有钱</h2>
+    {% endif %}
+    <select>
+        {% for c in city %}
+        <option value="">{{ c }}</option>
+        {% endfor %}
+    </select>
+    <ul>
+        {% for c in city %}
+        <li>第{{forloop.counter}}个城市：{{ c }}</li>
+        {% endfor %}
+    </ul>
+
+    {# hfdkjgh #}
+</body>
+</html>

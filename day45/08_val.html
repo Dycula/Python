@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--引入jquery文件-->
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        /*创建输入框,按钮和div,按钮点击时,将输入框的值以一级标题的形式显示在div中*/
+        window.onload=function(){
+            btn.onclick=function(){
+            $("div").html("<h1>"+$("input").val()+"</h1>")
+            //修改输入框的值
+            $("input").val("haha");
+            };
+            //属性操作
+            //jquery链式调用,对同一个对象连续调用不同方法进行操作
+            $("div").attr("id","box").prop("class","c1").html("属性操作").css("color","brown");
+            getStatus.onclick=function(){
+                //获取复选框的选中状态
+                console.log($("#savepwd").attr("checked"));
+                console.log($("#savepwd").prop("checked"));
+                //移除指定属性
+                $("#savepwd").removeAttr("checked");
+            };
+        };
+    </script>
+</head>
+<body>
+    <input type="text">
+    <button id="btn">显示</button>
+    <div></div>
+    <input type="checkbox" id="savepwd" checked="checked">
+    <button id="getStatus">获取</button>
+</body>
+</html>

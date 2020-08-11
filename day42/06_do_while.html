@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //循环输出一百次
+        var i=1;
+        do{
+            console.log("少年加油啊");
+            //更新循环变量
+            i++;
+        }while(i<101);
+        i=1;
+        while(i<101){
+            console.log("少女加油啊");
+            i++;
+        }
+        for(var i=1;i<101;i++){
+            console.log("你是年少的欢喜");
+        }
+        /*控制循环体的执行:break/continue*/
+        /*for(var i=1;i<101;i++){
+            console.log("i");
+            if(i=5){
+                break;
+            }
+            console.log("-----");
+        }*/
+        /*输入接收用户输入,并且在控制台中输出;直至用户输入exit表示退出*/
+        /*while(true){
+            var input=prompt("请输入");
+            if(input=="exit"){
+                  break;
+            }
+            console.log(input);
+        }*/
+        /*控制台中输出乘法表(循环嵌套)*/
+        for(var i=1;i<=9;i++){
+            var show=" "
+            for(var j=1;j<=i;j++){
+                show +=i+"*"+j+"="+i*j+"\t";
+            }
+            //按行输出
+            console.log(show)
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

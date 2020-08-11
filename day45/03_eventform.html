@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            //窗口加载完毕后执行
+            //console.log("window.onload");
+            //输入框相关
+            uname.onfocus=function(){
+                console.log("获取到焦点");
+            };
+            uname.unblur=function(){
+            //this:指代事件触发对象或函数的调用者
+                console.log("失去焦点:",uname.value);
+            };
+            //实时监听输入
+            uname.oninput=function(){
+                console.log("oninput:",this.value);
+            };
+            //监听前后俩次输入的内容是否一致
+            uname.onchange=function(){
+                //只有掐后俩次输入不一致,并且失去焦点时才触发
+                console.log("onchange:",this.value);
+            };
+            //监听按钮状态的改变
+            savepwd.onchange=function(){
+                //按钮有选中和未选中俩种状态,对应checked属性值为true/false
+                console.log(this.checked);
+            };
+            //监听表单中的数据是否可以提交
+            /*交由form元素监听,在点击提交按钮是触发,允许返回布尔值
+            true表示允许发送,false表示阻止发送*/
+            form.onsubmit=function(){
+                //用户名为空时阻止提交
+                if(uname.value==""){
+                    return false;
+                }else{
+                    return true;
+                }
+            };
+            };
+            function fn(){
+                console.log(this);
+            }
+            window.fn();
+    </script>
+</head>
+<body>
+    <form action="/login" method="get" enctype="" id="form">
+    用户姓名：<input type="text" name="uname" id="uname"><br>
+    记住密码：<input type="checkbox" id="savepwd" checked="checked"><br>
+    <input type="submit">
+    </form>
+    <ul>
+        <li>
+            <span id="city">北京</span>
+            <ol id="ol">
+                <li>北京</li>
+                <li>上海</li>
+                <li>广州</li>
+                <li>深圳</li>
+            </ol>
+        </li>
+    </ul>
+    <script>
+        console.log("测试");
+        /*实现下拉菜单的点击传值*/
+        //获取内层li元素列表
+        var list=ol.children;
+        for (var i=0;i<list.length;i++){
+            list[i].onclick=function(){
+                //传值
+                city.innerHTML=this.innerHTML;
+                console.log(this);
+            };
+        }
+    </script>
+</body>
+</html>

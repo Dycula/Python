@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--引入jquery文件-->
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <h1>叶良辰</h1>
+    <h1 id="d1">良辰</h1>
+    <h1 id="d2">美景</h1>
+    <h1 id="cd">赵日天</h1>
+    <h1 id="adi">叶良辰</h1>
+
+    <ul>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+    </ul>
+
+    <ul>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+        <li>列表项</li>
+    </ul>
+    <script>
+        console.log($("[id]"));
+        console.log($("[id='d1']"));
+        //匹配id属性以"d"开头的元素
+        console.log($("[id^=d]"));
+        //匹配id属性以"d"结尾的元素
+        console.log($("[id$=d]"));
+        //匹配id属性包含"d"的元素
+        console.log($("[id*=d]"));
+
+        //子元素过滤选择器
+        $("li:first").css("color","red");
+        $("li:fist-child").css("background","green");
+        $("li:last-child").css("background","orange");
+        $("li:nth-child(2)").css("text-align","center");
+    </script>
+
+</body>
+</html>

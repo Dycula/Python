@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--引入jquery文件-->
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        window.onload=function(){
+            //1.标签选择器
+            console.log($("h1").html());
+            //2.id选择器
+            $("#d1").css("text-align","center");
+            //3.class选择器
+            $(".c1").css("color","pink");
+            //4.群组选择器
+            $("body,h1").css("margin","0");
+            //5.后代选择器
+            $("#box span").css("color","red");
+            //6.子代选择器
+            $("#box>span").css("background","green");
+            //7.相邻兄弟选择器
+            $("#box p+span").css("border","1px solid black");
+            //8.通用兄弟选择器
+            $("#box p~span").css("font-size","32px");
+        };
+    </script>
+</head>
+<body>
+    <h1 id="d1">良辰</h1>
+    <h1 class="c1">美景</h1>
+    <div id="box">
+        <span>div--->span</span>
+        <p>
+            <span>div--->p--->span</span>
+        </p>
+        <b>测试</b>
+        <span>div--->span</span>
+        <span>div--->span</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #d1,#d2{
+            width:200px;
+            height:200px;
+            background:red;
+            margin:0 auto;
+        }
+        #d1{
+            background:green;
+            /*相对定位,已定位的元素可以设置偏移属性,调整
+            元素的的显示位置*/
+            position:relative;
+            /*
+            top:100px;
+            left:100px;
+            */
+            bottom:-100px;
+            right:100px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+</body>
+</html>

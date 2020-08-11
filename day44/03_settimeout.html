@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">开启</button>
+    <button id="stop1">关闭</button>
+    <script>
+        start.onclick=function(){
+            //开启超时调用
+            timer=setTimeout(function(){
+                console.log("超时调用");
+            },1000);
+        };
+        stop1.onclick=function(){
+            //关闭超时调用
+            clearTimeout(timer);
+        };
+    </script>
+</body>
+</html>

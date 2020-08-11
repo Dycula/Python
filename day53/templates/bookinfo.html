@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div>label{
+            display:inline-block;
+            width:80px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/bookstore/add2"method="post">
+        <div>
+            <label for="id_title">书名</label>
+            <input type="text" id="id_title" name="title">
+        </div>
+        <div>
+            <label for="id_pub">出版社</label>
+            <input type="text" id="id_pub" name="pub">
+        </div>
+        <div>
+            <label for="id_price">定价</label>
+            <input type="text" id="id_price" name="price">
+        </div>
+        <div>
+            <label for="id_market_price">零售价</label>
+            <input type="text" id="id_market_price" name="market_price">
+        </div>
+        <div>
+            <input type="submit" value="添加新书">
+        </div>
+    </form>
+</body>
+</html>
