@@ -60,8 +60,22 @@ function prefixlen()
 prefixlen "1a2b::e572:f0c1:3e1b:3ecc" "10"
 
 
-
-
+function foo()
+{
+ local IPV6=$1
+ echo $IPV6 > /home/FusionAccess/ipv6.tem
+ ipv6str=`cat /home/FusionAccess/ipv6.tem`
+ str=${ipv6str//:/ }
+ rm -rf /home/FusionAccess/ipv6.tem
+ arr=($str)
+ i=0
+ while [[ i -lt ${#arr[@]}]];do
+   arr[i]=`(echo ${arr[i]}|awk '{print strtonum("0x"$0)}'|awk '{printf("%04x\n",$0)}')`
+   let i++
+   done
+   ipv6=$(echo ${arr[@]}|sed 's/ //g')
+   echo "ipv6:${ipv6}"
+}
 
 
 
