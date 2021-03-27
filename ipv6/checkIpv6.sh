@@ -124,6 +124,3 @@ function checkIpv6()
   done
   return 0
 }
-
-
-
