@@ -177,4 +177,17 @@ class Broswer():
         Return:
             None
         """
-        
+        if strBrowser == 'chrome':
+            self.driver = webdriver.Chrome()
+        elif strBrowser == 'firefox':
+            self.driver = webdriver.firefox()
+        elif strBrowser == 'ie':
+            self.driver = webdriver.ie()
+        else:
+            self.log('No support browser type:%s,use "chrome" as default'%strBrowser)
+        self.driver = webdriver.Chrome()
+        self.driver.implicitly_wait(30)#隐性等待，最长等30秒
+        # self.driver.pageLoadTimeout(10)
+        self.driver.get(strUrl)
+        self.driver.maximize_window()
+        sleep(2)
