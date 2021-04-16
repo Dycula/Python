@@ -130,8 +130,51 @@ def scrollIntoView_New(func):
         except Exception as e:
             print(e)
         return func(*args, **kwargs)
+
     return _process
+
+
 class Broswer():
     '''
     浏览器对象，web操作失败后默认抛异常置用例失败，如需重试处理，可修改ASSERT_IF_FAIL或使用自行捕获异常处理
     '''
+
+    def __init__(self, logFunc=logFunc, dealFailFunc=None, screenshotSaveName='screenshot', ASSERT_IF_FAIL=True,
+                 DEBUG=True):
+        """
+        logFunc:日志处理函数
+        dealFailFunc:失败处理函数，例如可以用来失败截图，日志收集
+        ASSERT_IF_FAIL:失败时处理标志，True则assert，False则返回False
+        DEBUG:DEBUG开关
+        """
+        self.log = logFunc
+        self.ASSERT_IF_FAIL = ASSERT_IF_FAIL
+        self.DEBUG = DEBUG
+        self.driver = None
+        if dealFailFunc is not None:
+            self.dealFailFunc = dealFailFunc
+        else:
+            self.dealFailFunc = dealFailFunc
+        self.screenshotSaveName = '%s.png' % screenshotSaveName
+        self.screenshotSavePath = "C:\\AutoFactoryLogs\AllFailPics\\"
+        if not os.path.exists(self.screenshotSavePath):
+            os.makedirs(self.screenshotSavePath)
+
+    def dealFail(self):
+        """
+        失败处理，默认方式为截图，如需增加自定义处理方式，可在new类对象时传dealFailFunc
+        """
+        if self.driver is not None:
+            self.driver.save_screenshot('%s%s' % (self.screenshotSavePath, self.screenshotSaveName))
+
+    @wrapper
+    def open(self, strUrl, strBrowser='chrome'):
+        """
+        打开指定网页
+        Args:
+            strUrl:待打开网址
+            strBrowser:使用的浏览器，默认为chrome，支持chrome/firefox/ie
+        Return:
+            None
+        """
+        
