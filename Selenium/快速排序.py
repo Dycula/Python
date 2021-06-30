@@ -27,6 +27,7 @@ def QuickSort(list, start, end):
     return list
 
 
+
 list = [3, 9, 1, 2, 5, 7, 4, 8, 6]
 QuickSort(list, 0, len(list) - 1)
 print(list)
