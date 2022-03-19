@@ -32,6 +32,7 @@ from selenium import  webdriver
 from selenium.webdriver.support.wait import  WebDriverWait
 from selenium.webdriver.support import  expected_conditions as EC
 from selenium.webdriver.common.by import By
+
 driver=webdriver.Chrome()
 driver.get("https://www.baidu.com")
 driver.find_element_by_id('kw').send_keys('自动化测试')
